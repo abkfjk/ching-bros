@@ -1,0 +1,12 @@
+Store the last three combination values. Sum them with 2^(stack_size - 3), in order to account for the number of places that you can find three A's in a row.
+
+T(3) = 1
+T(4) = T(3) + 2^(4-3) = 3
+T(5) = T(4) + T(3) + 2^(5-3) = 8
+T(6) = T(5) + T(4) + T(3) + 2^(6-3) = 20
+T(7) = T(6) + T(5) + T(4) + 2^(7-3) = 47
+T(8) = T(7) + T(6) + T(5) + 2^(8-3) = 107
+
+T(n) = T(n-1) + T(n-2) + T(n-3) + 2^(n-3)
+
+We are only using the last three values and they are stored in a single dimension array so do not need to recompute up to the stack size.
